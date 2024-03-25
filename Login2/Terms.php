@@ -158,8 +158,14 @@ body{
         </ol>
       </div>
       <div class="tc_item tc_foot flex_align">
-          <button class="accept_btn"onclick = "window.location.href='home.php';">Accept</button>
-          <button class="decline_btn">Decline</button>
+          <button class="accept_btn"  onclick = "window.location.href='home.php';">Accept</button>
+          <script>
+  function showTermsAlert() {
+    alert("You cannot enter the site until you accept the terms.");
+  }
+</script>
+
+          <button class="decline_btn" onclick = "showTermsAlert()" >Decline</button>
       </div>
   </div>
 </div>
