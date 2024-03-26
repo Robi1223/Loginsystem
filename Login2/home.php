@@ -80,10 +80,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
         $start_date = $_POST["start_date"];
         $end_date = $_POST["end_date"];
 
-        // Construct the CSV file name based on the searched topic
+        
         $csvFilename = $topic . "_tweets.csv";
 
-        // Execute Python script with command-line arguments
+        
         $output = shell_exec("C:/users/HP/Desktop/twitter/scraper.py " . escapeshellarg($topic) . " " . escapeshellarg($start_date) . " " . escapeshellarg($end_date) . " 2>&1");
 
         // Display success or failure message
@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
             echo "<p>Search failed. Please try again.</p>";
         }
 
-        // Output any error messages from the Python script
+        
         echo "<pre>$output</pre>";
     } else {
         echo "<p>Note: Please make sure you enter a valid topic, a start date, and an end date before proceeding.</p>";
@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
 }
 ?>
 
-    <!-- Download button with dynamically generated file name -->
+    
     <center>
         <a href="<?php echo $csvFilename; ?>" download="<?php echo $csvFilename; ?>">
             <input type="submit" class="btn btn-primary" value="Download your File" >
