@@ -14,8 +14,8 @@ class TwitterLogin:
         self.password = password
 
     def login(self):
-        # Add your account setup and login logic here
-        # For demonstration purposes, let's assume successful login
+    
+        
         print(f"Logged in as {self.username}")
 
 async def main():
@@ -29,14 +29,14 @@ async def main():
     start_date = args.start_date
     end_date = args.end_date
 
-    # Create a TwitterLogin instance (replace with actual credentials)
-    login = TwitterLogin(username="@RobiFrank", password="Harriet1meissy")
+    
+    login = TwitterLogin(username="", password="")
 
     api = API()
 
     try:
-        # Add your account setup and login logic here
-        await api.pool.add_account(login.username, login.password, "frankrobi1223@gmail.com", "Humberger")
+    
+        await api.pool.add_account(login.username, login.password, "", "" )
         await api.pool.login_all()
 
     except warnings.Warning as warning:
